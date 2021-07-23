@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_search"
         android:name="com.example.cocktailApp.ui.search.SearchFragment"
-        android:label="@string/title_dashboard"
+        android:label="Search"
         tools:layout="@layout/fragment_search" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_favorites"
         android:name="com.example.cocktailApp.ui.favorites.FavoritesFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_favorites"
         tools:layout="@layout/fragment_favorites" />
 </navigation>
