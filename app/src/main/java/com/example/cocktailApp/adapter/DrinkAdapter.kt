@@ -32,4 +32,10 @@ class DrinkAdapter (val onDrinkSelected: (drink: Drink) -> Unit) : RecyclerView.
     }
 
     override fun getItemCount(): Int = drinks.size
+
+    fun updateList(newList: List<Drink>){
+        drinks.clear()
+        drinks.addAll(newList)
+        notifyDataSetChanged()
+    }
 }

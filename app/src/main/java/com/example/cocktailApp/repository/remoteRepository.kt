@@ -8,10 +8,10 @@ import com.example.cocktailApp.models.SearchCocktail
 
 object RemoteRepository {
 
-    suspend fun searchPlants(query: String?): ApiResult<SearchCocktail> = safeApiCall {
+    suspend fun getSearchedDrinks(query: String?): ApiResult<SearchCocktail> = safeApiCall {
         ApiHelper.retrofitClient.getSearchedDrinks(query)
     }
-    suspend fun getDetailPlant(plantId: String): ApiResult<Drink> = safeApiCall {
+    suspend fun getDetailDrink(plantId: String): ApiResult<Drink> = safeApiCall {
         ApiHelper.retrofitClient.getDetailsDrink(plantId)
     }
 }
