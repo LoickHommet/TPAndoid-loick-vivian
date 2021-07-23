@@ -5,6 +5,7 @@ import com.example.cocktailApp.api.ApiResult
 import com.example.cocktailApp.api.safeApiCall
 import com.example.cocktailApp.models.Drink
 import com.example.cocktailApp.models.SearchCocktail
+import retrofit2.Response
 
 object RemoteRepository {
 
@@ -13,5 +14,8 @@ object RemoteRepository {
     }
     suspend fun getDetailDrink(plantId: String): ApiResult<Drink> = safeApiCall {
         ApiHelper.retrofitClient.getDetailsDrink(plantId)
+    }
+    suspend fun getRandomDrink(): ApiResult<Drink> = safeApiCall {
+        ApiHelper.retrofitClient.getRandomDrink()
     }
 }

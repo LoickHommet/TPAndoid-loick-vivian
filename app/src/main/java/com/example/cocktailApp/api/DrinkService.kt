@@ -17,4 +17,7 @@ interface DrinkService {
     suspend fun getDetailsDrink(
         @Path("i") plantId: String
     ) : Response<Drink>
+
+    @GET("random.php")
+    suspend fun getRandomDrink() : Response<Drink>
 }

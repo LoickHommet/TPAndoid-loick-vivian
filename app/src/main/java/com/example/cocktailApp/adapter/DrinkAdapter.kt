@@ -38,4 +38,8 @@ class DrinkAdapter (val onDrinkSelected: (drink: Drink) -> Unit) : RecyclerView.
         drinks.addAll(newList)
         notifyDataSetChanged()
     }
+    fun addList(newDrink: Drink){
+        drinks.add(newDrink)
+        notifyDataSetChanged()
+    }
 }

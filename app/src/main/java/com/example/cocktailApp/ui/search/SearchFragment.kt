@@ -43,7 +43,6 @@ class SearchFragment : Fragment() {
         // Observeur listDrink
         searchViewModel.searchedDrinkLiveData.observe(viewLifecycleOwner, {
             adapter.updateList(it.drinks)
-            Log.e("Error", "Passage dans l'update")
         })
         // Observer error
         searchViewModel.apiErrorLiveData.observe(viewLifecycleOwner, {
