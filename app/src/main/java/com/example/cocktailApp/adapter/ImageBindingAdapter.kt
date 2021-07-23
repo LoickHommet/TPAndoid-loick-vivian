@@ -10,11 +10,11 @@ import com.squareup.picasso.Picasso
 @BindingAdapter("imageUrl")
 fun loadImage(imageView: ImageView, imageUrl: String?) {
     if(imageUrl == null){
-        imageView.setImageDrawable(ContextCompat.getDrawable(imageView.context, R.drawable.ic_menu_favorite))
+        imageView.setImageDrawable(ContextCompat.getDrawable(imageView.context, R.drawable.drink))
         imageView.alpha = 0.5f
     }
     else{
-        Picasso.get().load(imageUrl).error(ContextCompat.getDrawable(imageView.context, R.drawable.ic_menu_favorite)!!).into(imageView)
+        Picasso.get().load(imageUrl).error(ContextCompat.getDrawable(imageView.context, R.drawable.drink)!!).into(imageView)
         imageView.alpha = 1f
     }
 }

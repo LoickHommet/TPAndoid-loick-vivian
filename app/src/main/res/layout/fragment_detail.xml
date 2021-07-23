@@ -58,7 +58,20 @@
             app:layout_constraintTop_toBottomOf="@+id/textView4"
             tools:text="Alcoolisé" />
 
-
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:text="@{`Instruction : ` + `drink.strInstructions\n` + `Ingrédient: \n` + `drink.strIngredient1\n`+ `drink.strIngredient2\n` + `drink.strIngredient3\n`+ `drink.strIngredient4\n` + `drink.strIngredient5\n`+ `drink.strIngredient6\n` + `drink.strIngredient7\n`+ `drink.strIngredient8\n` + `drink.strIngredient9\n`+ `drink.strIngredient10\n` + `drink.strIngredient11\n`+ `drink.strIngredient12\n`+ `drink.strIngredient13\n`+ `drink.strIngredient14\n` + `drink.strIngredient15\n`}"
+            tools:text="Instruction"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
