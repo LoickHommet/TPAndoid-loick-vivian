@@ -13,7 +13,7 @@ object RemoteRepository {
     suspend fun getSearchedDrinks(query: String?): ApiResult<SearchCocktail> = safeApiCall {
         ApiHelper.retrofitClient.getSearchedDrinks(query)
     }
-    suspend fun getDetailDrink(plantId: String): ApiResult<Drink> = safeApiCall {
+    suspend fun getDetailDrink(plantId: String): ApiResult<SearchCocktail> = safeApiCall {
         ApiHelper.retrofitClient.getDetailsDrink(plantId)
     }
     suspend fun getRandomDrink(): ApiResult<SearchCocktail>  = safeApiCall {

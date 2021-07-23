@@ -15,8 +15,8 @@ interface DrinkService {
 
     @GET("lookup.php")
     suspend fun getDetailsDrink(
-        @Path("i") plantId: String
-    ) : Response<Drink>
+        @Query("i") plantId: String?
+    ) : Response<SearchCocktail>
 
     @GET("random.php")
     suspend fun getRandomDrink() : Response<SearchCocktail>
