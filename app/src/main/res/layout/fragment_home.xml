@@ -31,6 +31,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerDrinkHome"
             android:layout_width="409dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_height="674dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
@@ -40,7 +41,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textDrink"
-            tools:listitem="@layout/item_drink" />/>
+            tools:listitem="@layout/item_drink" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
