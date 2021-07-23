@@ -1,5 +1,6 @@
 package com.example.cocktailApp.repository
 
+import android.util.Log
 import com.example.cocktailApp.api.ApiHelper
 import com.example.cocktailApp.api.ApiResult
 import com.example.cocktailApp.api.safeApiCall
@@ -15,7 +16,7 @@ object RemoteRepository {
     suspend fun getDetailDrink(plantId: String): ApiResult<Drink> = safeApiCall {
         ApiHelper.retrofitClient.getDetailsDrink(plantId)
     }
-    suspend fun getRandomDrink(): ApiResult<Drink> = safeApiCall {
+    suspend fun getRandomDrink(): ApiResult<SearchCocktail>  = safeApiCall {
         ApiHelper.retrofitClient.getRandomDrink()
     }
 }

@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cocktailApp.databinding.ItemDrinkBinding
 import com.example.cocktailApp.models.Drink
+import com.example.cocktailApp.models.SearchCocktail
 
 class DrinkAdapter (val onDrinkSelected: (drink: Drink) -> Unit) : RecyclerView.Adapter<DrinkAdapter.DrinkViewHolder>(){
     private val drinks = mutableListOf<Drink>()
@@ -38,8 +39,8 @@ class DrinkAdapter (val onDrinkSelected: (drink: Drink) -> Unit) : RecyclerView.
         drinks.addAll(newList)
         notifyDataSetChanged()
     }
-    fun addList(newDrink: Drink){
-        drinks.add(newDrink)
+    fun addList(newDrink: List<Drink>){
+        drinks.addAll(newDrink)
         notifyDataSetChanged()
     }
 }

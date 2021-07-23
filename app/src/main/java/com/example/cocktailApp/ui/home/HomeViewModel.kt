@@ -12,16 +12,14 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
 
-    var homeDrinkLiveData = MutableLiveData<Drink>()
+    var homeDrinkLiveData = MutableLiveData<SearchCocktail>()
     var apiErrorLiveData = MutableLiveData<ApiResult.Error>()
 
     fun getRandomDrink() {
-        for (i in 1..3){
-            viewModelScope.launch {
-                when(val result = RemoteRepository.getRandomDrink()){
-                    is ApiResult.Success -> homeDrinkLiveData.postValue(result.data)
-                    is ApiResult.Error -> apiErrorLiveData.postValue(result)
-                }
+        viewModelScope.launch {
+            when(val result = RemoteRepository.getRandomDrink()){
+                is ApiResult.Success -> homeDrinkLiveData.postValue(result.data)
+                is ApiResult.Error -> apiErrorLiveData.postValue(result)
             }
         }
     }

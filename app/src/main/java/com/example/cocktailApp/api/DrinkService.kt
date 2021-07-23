@@ -19,5 +19,5 @@ interface DrinkService {
     ) : Response<Drink>
 
     @GET("random.php")
-    suspend fun getRandomDrink() : Response<Drink>
+    suspend fun getRandomDrink() : Response<SearchCocktail>
 }

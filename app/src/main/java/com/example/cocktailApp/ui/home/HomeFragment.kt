@@ -15,7 +15,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.cocktailApp.R
 import com.example.cocktailApp.adapter.DrinkAdapter
 import com.example.cocktailApp.databinding.FragmentHomeBinding
-import com.example.cocktailApp.databinding.FragmentSearchBinding
 import com.example.cocktailApp.ui.search.SearchFragmentDirections
 
 class HomeFragment : Fragment() {
@@ -35,21 +34,23 @@ class HomeFragment : Fragment() {
 
         // Création de notre adapter et d'un évenement click sur les éléments
         val adapter = DrinkAdapter { drink ->
-            val action = SearchFragmentDirections.actionNavigationSearchToNavigationDetail(idDrink = drink.idDrink)
+            val action = HomeFragmentDirections.actionNavigationHomeToNavigationDetail(idDrink = drink.idDrink)
             findNavController().navigate(action)
         }
         // Initialisation de l'adapter
         binding.recyclerDrinkHome.adapter = adapter
         // Observeur listDrink
         homeViewModel.homeDrinkLiveData.observe(viewLifecycleOwner, {
-            adapter.addList(it)
+            adapter.addList(it.drinks)
         })
         // Observer error
         homeViewModel.apiErrorLiveData.observe(viewLifecycleOwner, {
             Toast.makeText(requireContext(), "Error !", Toast.LENGTH_SHORT).show()
         })
         // Get random drink
-        homeViewModel.getRandomDrink()
+        for (i in 1..5){
+            homeViewModel.getRandomDrink()
+        }
 
 
         return binding.root
