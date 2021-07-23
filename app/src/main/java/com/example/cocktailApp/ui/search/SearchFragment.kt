@@ -20,11 +20,6 @@ import com.example.cocktailApp.databinding.FragmentSearchBinding
 class SearchFragment : Fragment() {
 
     private lateinit var searchViewModel: SearchViewModel
-    private var _binding: FragmentSearchBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,9 +28,6 @@ class SearchFragment : Fragment() {
     ): View? {
         searchViewModel =
             ViewModelProvider(this).get(SearchViewModel::class.java)
-
-        _binding = FragmentSearchBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
         val binding: FragmentSearchBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_search, container, false
@@ -70,11 +62,6 @@ class SearchFragment : Fragment() {
                 return false
             }
         })
-        return root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        return binding.root
     }
 }
